@@ -1,0 +1,15 @@
+import logging
+import os
+
+def setup_logging():
+    log_directory = "logs"
+    if not os.path.exists(log_directory):
+        os.makedirs(log_directory)
+    
+    logging.basicConfig(filename=os.path.join(log_directory, 'app.log'), 
+                        level=logging.INFO,
+                        format='%(asctime)s:%(levelname)s:%(message)s')
+
+def log_error(e):
+    logging.error(f"Error: {e}")2024-08-04 06:47:48,071:ERROR:Error: could not convert string to float: 'Travel_Rarely'
+2024-08-04 07:07:30,254:ERROR:Error: could not convert string to float: 'Travel_Rarely'
